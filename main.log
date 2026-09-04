@@ -1,0 +1,547 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.28)  4 SEP 2026 04:00
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"c:/Users/Ayoub/Desktop/Internship_Report_PFA - Ayoub Gourstane (DXC)/main.tex"
+(c:/Users/Ayoub/Desktop/Internship_Report_PFA - Ayoub Gourstane (DXC)/main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-07-20>
+(C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count276
+\c@chapter=\count277
+\c@section=\count278
+\c@subsection=\count279
+\c@subsubsection=\count280
+\c@paragraph=\count281
+\c@subparagraph=\count282
+\c@figure=\count283
+\c@table=\count284
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen150
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2026-05-17 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count285
+\Gm@cntv=\count286
+\c@Gm@tempcnt=\count287
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks20
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count288
+\float@exts=\toks21
+\float@box=\box53
+\@float@everytoks=\toks22
+\@floatcapt=\box54
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen161
+\WF@size=\dimen162
+\c@WF@wrappedlines=\count289
+\WF@box=\box55
+\WF@everypar=\toks23
+Package: wrapfig 2003/01/31  v 3.6
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2026-06-17 v7.01r Hypertext links for LaTeX
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count290
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count291
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen163
+\Hy@linkcounter=\count292
+\Hy@pagecounter=\count293
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2026-06-17 v7.01r Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count294
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2026-06-17 v7.01r Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4199.
+Package hyperref Info: Link nesting OFF on input line 4204.
+Package hyperref Info: Hyper index ON on input line 4207.
+Package hyperref Info: Plain pages OFF on input line 4214.
+Package hyperref Info: Backreferencing OFF on input line 4219.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4466.
+\c@Hy@tempcnt=\count295
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4805.
+\XeTeXLinkMargin=\dimen164
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count296
+\Field@Width=\dimen165
+\Fld@charsize=\dimen166
+Package hyperref Info: Hyper figures OFF on input line 6091.
+Package hyperref Info: Link nesting OFF on input line 6096.
+Package hyperref Info: Hyper index ON on input line 6099.
+Package hyperref Info: backreferencing OFF on input line 6106.
+Package hyperref Info: Link coloring OFF on input line 6111.
+Package hyperref Info: Link coloring with OCG OFF on input line 6116.
+Package hyperref Info: PDF/A mode OFF on input line 6121.
+\Hy@abspage=\count297
+\c@Item=\count298
+\c@Hfootnote=\count299
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2026-06-17 v7.01r Hyperref driver for pdfTeX
+\Fld@listcount=\count300
+\c@bookmark@seq@number=\count301
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip51
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box56
+\beforetitleunit=\skip52
+\aftertitleunit=\skip53
+\ttl@plus=\dimen167
+\ttl@minus=\dimen168
+\ttl@toksa=\toks24
+\titlewidth=\dimen169
+\titlewidthlast=\dimen170
+\titlewidthfirst=\dimen171
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/titling\titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip54
+\thanksmargin=\skip55
+\droptitle=\skip56
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2026/05/19 v2.18d AMS math features
+\@mathmargin=\skip57
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks25
+\ex@=\dimen172
+)) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen173
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count302
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count303
+\leftroot@=\count304
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count305
+\DOTSCASE@=\count306
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box57
+\strutbox@=\box58
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen174
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count307
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count308
+\dotsspace@=\muskip18
+\c@parentequation=\count309
+\dspbrk@lvl=\count310
+\tag@help=\toks26
+\row@=\count311
+\column@=\count312
+\maxfields@=\count313
+\andhelp@=\toks27
+\eqnshift@=\dimen175
+\alignsep@=\dimen176
+\tagshift@=\dimen177
+\tagwidth@=\dimen178
+\totwidth@=\dimen179
+\lineht@=\dimen180
+\@envbody=\toks28
+\multlinegap=\skip58
+\multlinetaggap=\skip59
+\mathdisplay@stack=\toks29
+LaTeX Info: Redefining \[ on input line 2965.
+LaTeX Info: Redefining \] on input line 2966.
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/appendix\appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count314
+\c@@ppsavesec=\count315
+\c@@ppsaveapp=\count316
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/comment\comment.sty
+\CommentStream=\write3
+ Excluding comment 'comment') (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
+Package: placeins 2005/04/18  v 2.2
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2026-07-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count317
+) (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count318
+\scratchdimen=\dimen181
+\scratchbox=\box59
+\nofMPsegments=\count319
+\nofMParguments=\count320
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count321
+\MPscratchDim=\dimen182
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
+\everyMPtoPDFconversion=\toks31
+) (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\Ayoub\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 46.
+ (main.out) (main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+<./images/UAE.png, id=195, 211.79124pt x 254.9525pt>
+File: ./images/UAE.png Graphic file (type png)
+<use ./images/UAE.png>
+Package pdftex.def Info: ./images/UAE.png  used on input line 53.
+(pdftex.def)             Requested size: 115.5088pt x 139.04944pt.
+<./images/ensah.png, id=197, 639.8304pt x 521.3076pt>
+File: ./images/ensah.png Graphic file (type png)
+<use ./images/ensah.png>
+Package pdftex.def Info: ./images/ensah.png  used on input line 57.
+(pdftex.def)             Requested size: 108.71173pt x 88.57338pt.
+<./images/dxcmaroc_logo.jpg, id=198, 200.75pt x 200.75pt>
+File: ./images/dxcmaroc_logo.jpg Graphic file (type jpg)
+<use ./images/dxcmaroc_logo.jpg>
+Package pdftex.def Info: ./images/dxcmaroc_logo.jpg  used on input line 61.
+(pdftex.def)             Requested size: 101.9188pt x 101.92165pt.
+ [1
+
+{C:/Users/Ayoub/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/UAE.png> <./images/ensah.png> <./images/dxcmaroc_logo.jpg>]
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.134 \chapter
+              *{Abstract} [1
+
+] [2
+
+] [3
+
+] (main.toc [4
+
+])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [5] (main.lof)
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ [6
+
+] (main.lot)
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+ [7
+
+]
+Chapter 1.
+File: ./images/dxcmaroc_logo.jpg Graphic file (type jpg)
+<use ./images/dxcmaroc_logo.jpg>
+Package pdftex.def Info: ./images/dxcmaroc_logo.jpg  used on input line 214.
+(pdftex.def)             Requested size: 90.5922pt x 90.59396pt.
+[8
+
+]
+<./images/csc_logo.png, id=336, 3011.25pt x 2007.5pt>
+File: ./images/csc_logo.png Graphic file (type png)
+<use ./images/csc_logo.png>
+Package pdftex.def Info: ./images/csc_logo.png  used on input line 233.
+(pdftex.def)             Requested size: 135.89174pt x 90.57866pt.
+<./images/hpe_logo.png, id=337, 1806.75pt x 932.48375pt>
+File: ./images/hpe_logo.png Graphic file (type png)
+<use ./images/hpe_logo.png>
+Package pdftex.def Info: ./images/hpe_logo.png  used on input line 253.
+(pdftex.def)             Requested size: 135.89174pt x 70.13246pt.
+ [9 <./images/csc_logo.png>]
+<./images/dxc_timeline.jpg, id=345, 1541.76pt x 867.24pt>
+File: ./images/dxc_timeline.jpg Graphic file (type jpg)
+<use ./images/dxc_timeline.jpg>
+Package pdftex.def Info: ./images/dxc_timeline.jpg  used on input line 273.
+(pdftex.def)             Requested size: 407.66833pt x 229.30142pt.
+ [10 <./images/hpe_logo.png> <./images/dxc_timeline.jpg>]
+<./images/dxc_morocco_history.png, id=352, 753.81625pt x 667.49374pt>
+File: ./images/dxc_morocco_history.png Graphic file (type png)
+<use ./images/dxc_morocco_history.png>
+Package pdftex.def Info: ./images/dxc_morocco_history.png  used on input line 331.
+(pdftex.def)             Requested size: 362.37569pt x 320.87206pt.
+ [11]
+<./images/success_history.png, id=360, 1234.6125pt x 550.055pt>
+File: ./images/success_history.png Graphic file (type png)
+<use ./images/success_history.png>
+Package pdftex.def Info: ./images/success_history.png  used on input line 348.
+(pdftex.def)             Requested size: 362.37569pt x 161.45068pt.
+ [12 <./images/dxc_morocco_history.png (PNG copy)>] [13 <./images/success_history.png (PNG copy)>]
+<./images/services_diagram.png, id=373, 1877.0125pt x 844.15375pt>
+File: ./images/services_diagram.png Graphic file (type png)
+<use ./images/services_diagram.png>
+Package pdftex.def Info: ./images/services_diagram.png  used on input line 392.
+(pdftex.def)             Requested size: 430.31812pt x 193.52011pt.
+<./images/dxc_org.png, id=375, 1182.4175pt x 729.72626pt>
+File: ./images/dxc_org.png Graphic file (type png)
+<use ./images/dxc_org.png>
+Package pdftex.def Info: ./images/dxc_org.png  used on input line 409.
+(pdftex.def)             Requested size: 430.31812pt x 265.56288pt.
+ [14 <./images/services_diagram.png (PNG copy)>]
+<./images/dxc_clients.png, id=381, 841.1425pt x 808.01875pt>
+File: ./images/dxc_clients.png Graphic file (type png)
+<use ./images/dxc_clients.png>
+Package pdftex.def Info: ./images/dxc_clients.png  used on input line 427.
+(pdftex.def)             Requested size: 407.66833pt x 391.61739pt.
+ [15 <./images/dxc_org.png (PNG copy)>]
+<./images/dxc_partners_certifications.png, id=387, 1393.205pt x 564.1075pt>
+File: ./images/dxc_partners_certifications.png Graphic file (type png)
+<use ./images/dxc_partners_certifications.png>
+Package pdftex.def Info: ./images/dxc_partners_certifications.png  used on input line 440.
+(pdftex.def)             Requested size: 339.72592pt x 137.54906pt.
+ [16 <./images/dxc_clients.png (PNG copy)>] [17 <./images/dxc_partners_certifications.png (PNG copy)>] [18] [19] [20] [21]
+<./images/methodological_approach.png, id=418, 1027.84pt x 1541.76pt>
+File: ./images/methodological_approach.png Graphic file (type png)
+<use ./images/methodological_approach.png>
+Package pdftex.def Info: ./images/methodological_approach.png  used on input line 659.
+(pdftex.def)             Requested size: 158.54152pt x 237.79407pt.
+ [22] [23 <./images/methodological_approach.png (PNG copy)>]
+Chapter 2.
+<./images/ServiceNow_logo.png, id=427, 585.18625pt x 86.3225pt>
+File: ./images/ServiceNow_logo.png Graphic file (type png)
+<use ./images/ServiceNow_logo.png>
+Package pdftex.def Info: ./images/ServiceNow_logo.png  used on input line 688.
+(pdftex.def)             Requested size: 158.54152pt x 23.3864pt.
+[24
+
+ <./images/ServiceNow_logo.png>]
+<./images/serviceNow_logo.png, id=434, 585.18625pt x 86.3225pt>
+File: ./images/serviceNow_logo.png Graphic file (type png)
+<use ./images/serviceNow_logo.png>
+Package pdftex.def Info: ./images/serviceNow_logo.png  used on input line 715.
+(pdftex.def)             Requested size: 90.5922pt x 13.36272pt.
+<./images/Servicenow-domain-separation-multi-tenant.png, id=436, 1164.35pt x 606.265pt>
+File: ./images/Servicenow-domain-separation-multi-tenant.png Graphic file (type png)
+<use ./images/Servicenow-domain-separation-multi-tenant.png>
+Package pdftex.def Info: ./images/Servicenow-domain-separation-multi-tenant.png  used on input line 734.
+(pdftex.def)             Requested size: 385.02547pt x 200.4751pt.
+ [25 <./images/serviceNow_logo.png>]
+<./images/servicenow_multi_instance.png, id=442, 863.225pt x 357.335pt>
+File: ./images/servicenow_multi_instance.png Graphic file (type png)
+<use ./images/servicenow_multi_instance.png>
+Package pdftex.def Info: ./images/servicenow_multi_instance.png  used on input line 745.
+(pdftex.def)             Requested size: 385.02547pt x 159.3816pt.
+ [26 <./images/Servicenow-domain-separation-multi-tenant.png (PNG copy)> <./images/servicenow_multi_instance.png>] [27] [28] [29]
+<./images/request-fulfillment-lifecycle.png, id=470, 2201.22375pt x 719.68875pt>
+File: ./images/request-fulfillment-lifecycle.png Graphic file (type png)
+<use ./images/request-fulfillment-lifecycle.png>
+Package pdftex.def Info: ./images/request-fulfillment-lifecycle.png  used on input line 876.
+(pdftex.def)             Requested size: 407.66833pt x 133.2831pt.
+ [30 <./images/request-fulfillment-lifecycle.png>] [31]
+Overfull \hbox (3.5747pt too wide) in paragraph at lines 984--987
+[]\T1/cmr/bx/n/12 Notifications: \T1/cmr/m/n/12 Au-to-mated no-ti-fi-ca-tions keep users and stake-hold-ers in-formed about
+ []
+
+[32] [33] [34]
+Chapter 3.
+[35
+
+] (main.aux)
+ ***********
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-07-20>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 57ED5E99176CC2013144FC1A71B522DD;9135.
+ ) 
+Here is how much of TeX's memory you used:
+ 11489 strings out of 467501
+ 180530 string characters out of 5408550
+ 613181 words of memory out of 5000000
+ 40450 multiletter control sequences out of 15000+600000
+ 643275 words of font info for 72 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 74i,11n,79p,493b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Ayoub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1728.pk><C:/Users/Ayoub/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on main.pdf (36 pages, 5694605 bytes).
+PDF statistics:
+ 913 PDF objects out of 1000 (max. 8388607)
+ 129 named destinations out of 1000 (max. 500000)
+ 475 words of extra memory for PDF output out of 10000 (max. 10000000)
+
