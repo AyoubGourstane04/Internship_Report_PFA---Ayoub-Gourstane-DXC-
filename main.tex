@@ -11,6 +11,9 @@
 \usepackage{setspace}
 \setstretch{1.5}
 
+\usepackage{tabularx}
+\usepackage{array}
+
 % Graphics & figures
 \usepackage{graphicx}
 \graphicspath{{./images/}}
@@ -176,6 +179,8 @@ aPaaS  & Application Platform as a Service \\
 SaaS  & Software as a Service \\
 \hline
 UAT  & User Acceptance Testing \\
+\hline
+CMDB  & Configuration Management Database \\
 \hline
 \end{tabular}
 
@@ -1069,8 +1074,512 @@ and the development and deployment process. These concepts provide the
 foundation for the following chapters, which focus on the design and practical
 implementation of the developed solution.
 
-
 \chapter{Analysis and Design of the Service Request Fulfillment Solution}
+
+\section{Introduction}
+This chapter bridges the gap between the theoretical concepts of ITSM and the
+practical design of the Service Request Fulfillment solution. It provides an
+analysis of the existing request management process, identifying its current
+limitations and defining the functional requirements for the proposed
+solution. The chapter then presents the solution design, including the
+proposed ServiceNow architecture, the structure of the Service Catalog, and
+the data model. Finally, it provides a detailed design specification for each
+of the five core Catalog Items, including their respective inputs, approval
+workflows, and Service Level Agreements (SLAs).
+
+\section{Analysis of the Existing Request Management Process}
+\subsection{Existing Process and Current Challenges}
+Prior to the implementation of the proposed solution, IT service requests were managed through 
+different communication channels, requiring IT support personnel to manually review, process, and route each request. 
+This approach presented several operational challenges : 
+
+\begin{itemize}
+    \item \textbf{Data Inconsistency:} Without standardized request forms,
+    submitted requests may lack important information required for their
+    processing and fulfillment, resulting in additional communication with
+    the requester.
+
+    \item \textbf{Manual Routing and Approval:} Requests and approval steps
+    may require manual intervention to identify the appropriate responsible
+    person or fulfillment group, which can increase processing time.
+
+    \item \textbf{Lack of Visibility:} Without a centralized system for
+    managing requests, users and support teams have limited visibility into
+    the status and progress of ongoing requests.
+
+    \item \textbf{Limited Performance Monitoring:} The absence of centralized
+    request tracking makes it difficult to consistently monitor fulfillment
+    times, evaluate service performance, and identify process bottlenecks.
+\end{itemize}
+
+These limitations highlighted the need for a centralized and automated
+solution capable of standardizing request submission, automating approval and
+routing processes, and improving the overall traceability of IT service
+requests.
+
+\subsection{Requirements Analysis}
+Based on the analysis of the existing request management process, a set of
+functional requirements was defined for the proposed Service Request
+Fulfillment solution. These requirements describe the main capabilities that
+the system should provide to standardize and automate the handling of IT
+service requests.
+
+The solution should meet the following functional requirements:
+\begin{itemize}
+    \item \textbf{Request Submission:} Provide users with a centralized
+    Service Catalog through which they can select and submit predefined IT
+    service requests.
+
+    \item \textbf{Structured Data Collection:} Provide dedicated request
+    forms containing the information required for each type of service.
+
+    \item \textbf{Approval Management:} Support predefined approval processes
+    for requests that require authorization before fulfillment.
+
+    \item \textbf{Automatic Assignment:} Route requests and fulfillment tasks
+    to the appropriate support groups according to predefined rules.
+
+    \item \textbf{Workflow Automation:} Automate the different stages of the
+    request fulfillment process, from submission and approval to task
+    completion and closure.
+
+    \item \textbf{Notifications:} Inform users and relevant stakeholders
+    about important events and changes in the request lifecycle.
+
+    \item \textbf{SLA Management:} Support the monitoring of fulfillment
+    times according to predefined service-level targets.
+
+    \item \textbf{Request Tracking:} Provide centralized visibility into the
+    status and progress of submitted requests.
+
+\end{itemize}
+
+These requirements served as the basis for designing the proposed ServiceNow
+solution and defining the configuration of the different Catalog Items and
+fulfillment workflows.
+
+\section{Functional Analysis}
+
+\subsection{Actors and Responsibilities}
+The Service Request Fulfillment process involves several actors who interact with the system 
+at different stages of the request lifecycle. Each actor has specific responsibilities related 
+to the submission, authorization, and fulfillment of service requests. 
+
+The main actors identified for the proposed solution are : 
+
+\begin{itemize}
+    \item \textbf{Requester:} The employee who submits an IT service request
+    through the Service Catalog and provides the information required for its
+    processing.
+
+    \item \textbf{Direct Manager:} The responsible person who reviews and approves
+    requests when managerial authorization is required.
+
+    \item \textbf{Fulfillment Teams:} The teams responsible for
+    processing assigned fulfillment tasks and providing the requested service.
+
+    \item \textbf{HR Team:} The responsible team involved in requests that
+    require employee-related validation, such as account creation.
+
+    \item \textbf{Security Team:} The team responsible for
+    reviewing and processing requests related to secure access and network
+    services, such as Enterprise VPN Access.
+\end{itemize}
+
+The interaction between these actors depends on the type of service
+requested. A request may therefore involve one or more approval and
+fulfillment stages before it can be completed.
+
+Figure~\ref{fig:use-case-diagram} illustrates the main actors involved in the
+Service Request Fulfillment process and their interactions with the proposed
+solution.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{service_request_use_case_diagram.png}
+    \caption{Use Case Diagram of the Service Request Fulfillment Solution}
+    \label{fig:use-case-diagram}
+\end{figure}
+
+\subsection{Service Request Requirements}
+Each Catalog Item requires specific information and fulfillment conditions depending on the 
+type of service requested. The requirements were analyzed to determine the information to be 
+collected, the approvals to be obtained, and the fulfillment activities to be performed for 
+each request.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{3.0cm}|
+        >{\raggedright\arraybackslash}p{2.4cm}|
+        X|
+        X|}
+        \hline
+        \textbf{Catalog Item} &
+        \textbf{Category} &
+        \textbf{Main Requirements} &
+        \textbf{Fulfillment Activities} \\
+        \hline
+
+        Create User Account &
+        User Management &
+        User Concerned, Manager, Necessary Applications, Account Type,
+        Start Date, Employee ID Number &
+        AD account creation, mailbox creation, and application access \\
+        \hline
+
+        Enterprise VPN Access Request &
+        Access Management &
+        User Concerned, Access Type, Justification, Access Duration,
+        Start Date, End Date &
+        Security analysis, VPN configuration, User testing \\
+        \hline
+
+        Software Installation &
+        Software Services &
+        User Concerned, Software Requested, Computer, Version,
+        Business Justification, Desired Date &
+        License availability check, Software installation, User validation \\
+        \hline
+
+        IT Equipment Request &
+        Hardware Services &
+        User Concerned, Assigned Materials, Material Type, Reason,
+        Cost Center, Quantity, Desired Date &
+        Stock check, Equipment preparation, Delivery \\
+        \hline
+
+        Reset Password &
+        Self Service &
+        User Concerned, Application Concerned, Is Urgent, Reason &
+        Password reset \\
+        \hline
+
+    \end{tabularx}
+    \caption{Main Requirements of the Catalog Items}
+    \label{tab:catalog-item-requirements}
+\end{table}
+
+
+The analysis of these requirements provided the basis for defining the
+specific forms, approval processes, conditions, and fulfillment tasks
+associated with each Catalog Item. The resulting workflows were designed to
+adapt the processing of each request according to its specific requirements.
+
+\subsection{Request and Approval Workflows}
+
+The analysis of the five Catalog Items showed that each request follows a
+specific fulfillment workflow based on its requirements and approval
+conditions. Although the workflows share common stages, such as request
+submission, approval, task fulfillment, and closure, each service includes
+specific conditions and activities.
+
+The main workflow characteristics of the five Catalog Items are summarized in
+Table~\ref{tab:request-workflows}.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{3.2cm}|
+        >{\raggedright\arraybackslash}p{3.4cm}|
+        X|}
+        \hline
+        \textbf{Catalog Item} &
+        \textbf{Approval Process} &
+        \textbf{Main Workflow Activities} \\
+        \hline
+
+        Create User Account &
+        Manager approval followed by HR approval &
+        Determine account type and priority, create AD account,
+        create mailbox, and assign application access when required. \\
+        \hline
+
+        Enterprise VPN Access Request &
+        Manager approval followed by Security Team approval &
+        Determine priority, perform security analysis, configure VPN,
+        and conduct user testing. \\
+        \hline
+
+        Software Installation &
+        Manager approval followed by user validation &
+        Check license requirement and availability, install the software,
+        obtain user validation, and close the request. \\
+        \hline
+
+        IT Equipment Request &
+        Manager approval &
+        Check equipment availability, determine priority, prepare and
+        deliver the equipment, and update the CMDB. \\
+        \hline
+
+        Password Reset &
+        No approval required &
+        Determine priority according to urgency, create the password
+        reset task, and close the request after completion. \\
+        \hline
+
+    \end{tabularx}
+    \caption{Main Characteristics of the Request Workflows}
+    \label{tab:request-workflows}
+\end{table}
+
+The functional analysis shows that the workflows cannot follow a single
+standard process. Instead, each workflow adapts to the characteristics and
+requirements of the requested service:
+
+\begin{itemize}
+
+    \item \textbf{Simple Requests:} Requests such as Password Reset do not
+    require managerial approval and can proceed directly to fulfillment,
+    with their priority determined according to the urgency of the request.
+
+    \item \textbf{Requests Requiring Managerial Approval:} Requests such as
+    Software Installation and IT Equipment Request require Direct Manager
+    approval before the fulfillment activities can begin.
+
+    \item \textbf{Requests Requiring Multiple Approvals:} Requests such as
+    User Account Creation and Enterprise VPN Access require additional
+    validation after managerial approval, involving the HR Team or Security
+    Team respectively.
+
+\end{itemize}
+
+The workflows also include conditional paths to handle specific situations.
+For example, rejected approvals result in the request being closed as
+incomplete, while conditions such as account type, software license
+availability, equipment stock, and request urgency can modify the subsequent
+processing of a request.
+
+This approach allows each Catalog Item to follow a controlled process adapted
+to its specific requirements while maintaining a consistent overall
+fulfillment structure.
+
+\section{Solution Design}
+
+\subsection{Proposed ServiceNow Architecture}
+The proposed solution is built on the ServiceNow ITSM architecture and uses the platform's request 
+management structure to organize the fulfillment of IT service requests. When a user submits a 
+Catalog Item, ServiceNow creates a hierarchy of related records that supports the request throughout 
+its lifecycle.
+
+\begin{enumerate}
+    \item \textbf{Request (REQ):} Represents the overall request submitted
+    by the user and acts as the container for the requested services.
+
+    \item \textbf{Requested Item (RITM):} Represents the specific Catalog Item
+    requested by the user and contains the information collected through its
+    request form.
+
+    \item \textbf{Catalog Task (SCTASK):} Represents an individual fulfillment
+    activity generated for the Requested Item and assigned to the appropriate
+    fulfillment team.
+\end{enumerate}
+
+The RITM serves as the central element of the fulfillment process. Once it is
+created, the corresponding Flow Designer workflow manages the required
+conditions, approvals, and fulfillment tasks. Depending on the requested
+service, one or more SCTASKs can be generated and assigned to the appropriate
+teams until the request is completed.
+
+This architecture provides a structured relationship between the user
+request, the requested service, and the activities required for its
+fulfillment, while supporting centralized tracking of the request lifecycle.
+
+Figure~\ref{fig:servicenow-solution-architecture} illustrates the proposed
+architecture of the Service Request Fulfillment solution.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.10\textwidth]{servicenow_solution_architecture.png}
+    \caption{Proposed Architecture of the Service Request Fulfillment Solution}
+    \label{fig:servicenow-solution-architecture}
+\end{figure}
+
+\subsection{Service Catalog Structure}
+
+The proposed Service Catalog is organized around five Catalog Items, each
+corresponding to a specific type of IT service request. This structure allows
+users to identify the required service easily while ensuring that each request
+is associated with the appropriate information and fulfillment process.
+
+The Catalog Items are organized into logical categories according to the type
+of service they provide:
+
+\begin{itemize}
+    \item \textbf{User Management:} Create User Account
+    \item \textbf{Access Management:} Enterprise VPN Access Request
+    \item \textbf{Software Services:} Software Installation
+    \item \textbf{Hardware Services:} IT Equipment Request
+    \item \textbf{Self Service:} Reset Password
+\end{itemize}
+
+Each Catalog Item is associated with a dedicated request form containing the
+variables required for its processing. The information collected through
+these forms is then used by the corresponding workflow to determine the
+required conditions, approvals, and fulfillment activities.
+
+Figure~\ref{fig:service-catalog-structure} illustrates the organization of
+the proposed Service Catalog.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{service_catalog_structure.png}
+    \caption{Structure of the Service Catalog}
+    \label{fig:service-catalog-structure}
+\end{figure}
+
+\subsection{Request Fulfillment Workflow}
+
+The proposed fulfillment process follows a common structure while allowing
+each Catalog Item to include specific conditions and activities. Once a
+request is submitted, the corresponding Requested Item is processed by the
+associated workflow.
+
+The general workflow consists of the following stages:
+
+\begin{enumerate}
+    \item \textbf{Request Submission:} The user selects a Catalog Item and
+    provides the required information.
+
+    \item \textbf{Initial Processing:} The workflow retrieves the submitted
+    variables and evaluates conditions that may affect the request, such as
+    account type, urgency, license requirements, or equipment availability.
+
+    \item \textbf{Approval:} When required, the request is submitted to the
+    appropriate approver. Depending on the service, this may involve the
+    Direct Manager, HR Team, or Security Team.
+
+    \item \textbf{Rejection Handling:} If an approval is rejected, the
+    workflow updates the request status and closes the Requested Item as
+    incomplete.
+
+    \item \textbf{Fulfillment:} For approved requests, the workflow creates
+    the required Catalog Tasks and assigns them to the appropriate
+    fulfillment teams.
+
+    \item \textbf{Validation and Closure:} Where required, the completed
+    service is validated before the Requested Item is marked as complete.
+\end{enumerate}
+
+Although this general structure is shared across the solution, the workflow
+branches according to the requirements of each service. For example, the
+User Account Creation workflow includes Manager and HR approval, while the
+Enterprise VPN Access workflow includes Manager and Security approval.
+Software Installation includes a license check and user validation, whereas
+IT Equipment Request includes stock verification and CMDB updating.
+Password Reset follows a simpler process based primarily on request urgency.
+
+Figure~\ref{fig:request-fulfillment-workflow} presents the general workflow
+designed for the Service Request Fulfillment solution.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{request_fulfillment_workflow.png}
+    \caption{General Request Fulfillment Workflow}
+    \label{fig:request-fulfillment-workflow}
+\end{figure}
+
+\subsection{Request Data and Configuration Model}
+
+The proposed solution combines ServiceNow configuration elements with the
+standard request records generated during the fulfillment process. This
+structure ensures that the information provided by the requester is preserved
+and made available throughout the different stages of request processing.
+
+The main elements involved are:
+
+\begin{itemize}
+
+    \item \textbf{Catalog Item:} Defines the service available to users and
+    the information required to submit the request.
+
+    \item \textbf{Variables:} Collect the information provided by the requester
+    through the Catalog Item form. These values are used by the workflow to
+    evaluate conditions and determine the required processing.
+
+    \item \textbf{Request (REQ):} Represents the overall request submitted by
+    the user and serves as a container for one or more Requested Items.
+
+    \item \textbf{Requested Item (RITM):} Represents the specific Catalog Item
+    requested and serves as the main record throughout its fulfillment
+    lifecycle.
+
+    \item \textbf{Approval Records:} Store the approval requests and decisions
+    associated with the Requested Item when authorization is required.
+
+    \item \textbf{Catalog Tasks (SCTASKs):} Represent the individual
+    fulfillment activities generated from the Requested Item and assigned to
+    the appropriate fulfillment teams.
+
+\end{itemize}
+
+The configuration elements supporting this structure include Flow Designer,
+UI Policies, User Criteria, Business Rules, Service Level Agreements, and
+Notifications. These elements interact with the request records to control
+processing, apply conditions, manage access, monitor fulfillment times, and
+communicate important updates.
+
+Figure~\ref{fig:data-configuration-model} illustrates the relationships
+between the main configuration elements and request records used in the
+proposed solution.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{data_configuration_model.png}
+    \caption{Data and Configuration Model of the Solution}
+    \label{fig:data-configuration-model}
+\end{figure}
+
+\section{Design of the Catalog Items}
+
+\subsection{Create User Account}
+
+\subsection{Enterprise VPN Access Request}
+
+\subsection{Software Installation}
+
+\subsection{IT Equipment Request}
+\subsection{Reset Password}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}

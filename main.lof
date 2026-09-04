@@ -1,18 +1,23 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces DXC Technology Logo}}{9}{figure.1.1}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces CSC logo}}{9}{figure.1.2}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces HPE logo}}{10}{figure.1.3}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Evolution leading to the creation of DXC Technology}}{10}{figure.1.4}%
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Historical development of DXC Technology Morocco}}{12}{figure.1.5}%
-\contentsline {figure}{\numberline {1.6}{\ignorespaces DXC Technology Success Story}}{13}{figure.1.6}%
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Main business areas and services of DXC Technology Morocco}}{14}{figure.1.7}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Organizational structure of DXC Technology Morocco}}{15}{figure.1.8}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Examples of DXC Technology Morocco's clients}}{16}{figure.1.9}%
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Selected partners and certifications of DXC Technology Morocco}}{17}{figure.1.10}%
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Methodological Approach Phases}}{23}{figure.1.11}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces DXC Technology Logo}}{10}{figure.1.1}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces CSC logo}}{10}{figure.1.2}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces HPE logo}}{11}{figure.1.3}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Evolution leading to the creation of DXC Technology}}{11}{figure.1.4}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Historical development of DXC Technology Morocco}}{13}{figure.1.5}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces DXC Technology Success Story}}{14}{figure.1.6}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Main business areas and services of DXC Technology Morocco}}{15}{figure.1.7}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Organizational structure of DXC Technology Morocco}}{16}{figure.1.8}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Examples of DXC Technology Morocco's clients}}{17}{figure.1.9}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Selected partners and certifications of DXC Technology Morocco}}{18}{figure.1.10}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Methodological Approach Phases}}{24}{figure.1.11}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces ServiceNow Logo}}{24}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Multi Tenant vs Single Tenant}}{26}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Multi-Instance Architecture of ServiceNow}}{26}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Request Fulfillment Lifecycle in ServiceNow}}{30}{figure.2.4}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces ServiceNow Logo}}{25}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Multi Tenant vs Single Tenant}}{27}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Multi-Instance Architecture of ServiceNow}}{27}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Request Fulfillment Lifecycle in ServiceNow}}{31}{figure.2.4}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Use Case Diagram of the Service Request Fulfillment Solution}}{39}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Proposed Architecture of the Service Request Fulfillment Solution}}{43}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Structure of the Service Catalog}}{44}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces General Request Fulfillment Workflow}}{46}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Data and Configuration Model of the Solution}}{47}{figure.3.5}%
