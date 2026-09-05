@@ -182,6 +182,8 @@ UAT  & User Acceptance Testing \\
 \hline
 CMDB  & Configuration Management Database \\
 \hline
+PDI  & Personal Developer Instance \\
+\hline
 \end{tabular}
 
 \tableofcontents
@@ -1537,28 +1539,500 @@ proposed solution.
 \section{Design of the Catalog Items}
 
 \subsection{Create User Account}
+The Create User Account Catalog Item is designed to manage requests for the creation of a user 
+account and the resources required for a new employee. The request form collects the information 
+necessary to identify the user, determine the account type, and specify any additional applications required.
+
+The main design elements are presented in Table~\ref{tab:create-account-design}.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{3.5cm}|X|}
+        \hline
+        \textbf{Design Element} & \textbf{Description} \\
+        \hline
+        
+        Required Inputs &
+        User Concerned, Manager, Necessary Applications, Account Type,
+        Start Date, and Employee ID Number \\
+        \hline
+
+        Approval Process &
+        Direct Manager approval followed by HR approval \\
+        \hline
+
+        Conditions &
+        The account type is evaluated to determine the appropriate priority,
+        while the requested applications determine whether additional
+        application access is required. \\
+        \hline
+
+        Fulfillment &
+        AD account creation, mailbox creation, and application access
+        when required \\
+        \hline
+
+        Completion &
+        The Requested Item is completed after the required fulfillment
+        activities have been successfully processed. \\
+        \hline
+
+    \end{tabularx}
+    \caption{Design of the Create User Account Catalog Item}
+    \label{tab:create-account-design}
+\end{table}
+
+The workflow follows a sequential approval process. The request is first
+submitted for Direct Manager approval and, after successful approval, for HR
+approval. If an approval is rejected, the request follows the incomplete
+closure path. When the required approvals are obtained, the corresponding
+fulfillment tasks are generated. The workflow also includes conditional
+processing based on the account type and the applications requested.
+
+Figure~\ref{fig:create-user-account-flow} presents the designed fulfillment
+workflow for the Create User Account Catalog Item.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.97\textheight,keepaspectratio]{create_user_account_flow.png}
+    \caption{Create User Account Fulfillment Workflow}
+    \label{fig:create-user-account-flow}
+\end{figure}
 
 \subsection{Enterprise VPN Access Request}
+The Enterprise VPN Access Request Catalog Item is designed to manage requests for secure remote 
+access to enterprise resources. Due to the nature of this service. Due to the nature of this 
+service, the request requires both managerial authorization and security validation before the technical 
+fulfillment activities can begin.
+
+The main design elements are presented in
+Table~\ref{tab:vpn-design}.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{3.5cm}|X|}
+        \hline
+        \textbf{Design Element} & \textbf{Description} \\
+        \hline
+
+        Required Inputs &
+        User Concerned, Access Type, Justification, Access Duration,
+        Start Date, and End Date \\
+        \hline
+
+        Approval Process &
+        Direct Manager approval followed by Security Team approval \\
+        \hline
+
+        Conditions &
+        The request priority is determined according to the defined
+        conditions. Rejection at either approval stage stops the
+        fulfillment process. \\
+        \hline
+
+        Fulfillment &
+        Security analysis, VPN configuration, and user testing \\
+        \hline
+
+        Completion &
+        The Requested Item is completed after the required fulfillment
+        activities and user testing have been completed. \\
+        \hline
+
+    \end{tabularx}
+    \caption{Design of the Enterprise VPN Access Request Catalog Item}
+    \label{tab:vpn-design}
+\end{table}
+
+The workflow implements two sequential authorization stages. The Direct
+Manager first reviews the request, followed by the Security Team. If either
+approval is rejected, the request follows the incomplete closure path.
+Otherwise, the workflow proceeds to the security analysis, VPN configuration,
+and user testing activities.
+
+Figure~\ref{fig:vpn-flow} presents the designed fulfillment workflow for the
+Enterprise VPN Access Request Catalog Item.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.97\textheight,keepaspectratio]{Request_enterprise_VPN_access_flow.png}
+    \caption{Enterprise VPN Access Request Fulfillment Workflow}
+    \label{fig:vpn-flow}
+\end{figure}
 
 \subsection{Software Installation}
+The Software Installation Catalog Item is designed to manage requests for
+installing software on a user's computer. The request form collects the
+information required to identify the requested software and the target
+computer. The workflow also includes a condition to determine whether a
+license check is required.
+
+The main design elements are presented in
+Table~\ref{tab:software-design}.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{3.5cm}|X|}
+        \hline
+        \textbf{Design Element} & \textbf{Description} \\
+        \hline
+
+        Required Inputs &
+        User Concerned, Software Requested, Computer, Version,
+        Business Justification, and Desired Date \\
+        \hline
+
+        Approval Process &
+        Direct Manager approval followed by user validation after
+        installation \\
+        \hline
+
+        Conditions &
+        The workflow evaluates whether a license is required and,
+        when applicable, checks its availability before installation. \\
+        \hline
+
+        Fulfillment &
+        License availability check and software installation \\
+        \hline
+
+        Completion &
+        The user validates the installation before the Requested Item
+        is completed. \\
+        \hline
+
+    \end{tabularx}
+    \caption{Design of the Software Installation Catalog Item}
+    \label{tab:software-design}
+\end{table}
+
+After submission, the workflow evaluates the license requirement and
+processes the request through the managerial approval stage. Once approved,
+the required fulfillment activities are performed. The user is then asked
+to validate the installation before the request is completed.
+
+Figure~\ref{fig:software-installation-flow} presents the designed fulfillment
+workflow for the Software Installation Catalog Item.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.96\textheight,keepaspectratio]{Install_a_software_flow.png}
+    \caption{Software Installation Fulfillment Workflow}
+    \label{fig:software-installation-flow}
+\end{figure}
 
 \subsection{IT Equipment Request}
+The IT Equipment Request Catalog Item is designed to manage requests for IT
+hardware and equipment. The process combines managerial approval with an
+equipment availability check before the required fulfillment activities are
+performed.
+
+The main design elements are presented in
+Table~\ref{tab:equipment-design}.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{3.5cm}|X|}
+        \hline
+        \textbf{Design Element} & \textbf{Description} \\
+        \hline
+
+        Required Inputs &
+        User Concerned, Assigned Materials, Material Type, Reason,
+        Cost Center, Quantity, and Desired Date \\
+        \hline
+
+        Approval Process &
+        Direct Manager approval \\
+        \hline
+
+        Conditions &
+        The workflow checks equipment availability and determines the
+        subsequent processing according to the stock condition. \\
+        \hline
+
+        Fulfillment &
+        Stock verification, equipment preparation, and equipment delivery \\
+        \hline
+
+        Additional Processing &
+        The corresponding equipment information is updated in the CMDB
+        as part of the fulfillment process. \\
+        \hline
+
+        Completion &
+        The Requested Item is completed after the required fulfillment
+        activities have been processed. \\
+        \hline
+
+    \end{tabularx}
+    \caption{Design of the IT Equipment Request Catalog Item}
+    \label{tab:equipment-design}
+\end{table}
+
+Following managerial approval, the workflow performs a stock verification.
+The subsequent processing depends on equipment availability. The fulfillment
+process then includes equipment preparation and delivery, followed by the
+required CMDB update before the request is completed.
+
+Figure~\ref{fig:equipment-request-flow} presents the designed fulfillment
+workflow for the IT Equipment Request Catalog Item.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.96\textheight,keepaspectratio]{Request_IT_equipment_flow.png}
+    \caption{IT Equipment Request Fulfillment Workflow}
+    \label{fig:equipment-request-flow}
+\end{figure}
+
 \subsection{Reset Password}
+The \textbf{Reset Password} Catalog Item was designed to provide users with
+a simple way to request a password reset. Unlike the other Catalog Items,
+this request does not require managerial approval. Its processing is mainly
+based on the urgency of the request and the execution of a fulfillment task.
 
 
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{3.5cm}|X|}
+        \hline
+        \textbf{Design Element} & \textbf{Description} \\
+        \hline
+        Required Inputs &
+        User Concerned, Application Concerned, Urgency, Reason \\
+        \hline
+        Approval &
+        No approval required \\
+        \hline
+        Conditions &
+        The urgency of the request determines its priority \\
+        \hline
+        Fulfillment &
+        Creation of a password reset Catalog Task assigned to the Service Desk \\
+        \hline
+        Completion &
+        The Requested Item is closed after the fulfillment task is completed \\
+        \hline
+    \end{tabularx}
+    \caption{Design of the Reset Password Catalog Item}
+    \label{tab:reset-password-design}
+\end{table}
+
+The workflow was designed to evaluate the urgency of the request, create a
+fulfillment task for the Service Desk, and close the Requested Item once the
+task is completed. This provides a lightweight process suitable for a
+self-service password reset request.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.65\textheight,keepaspectratio]{reset_password_flow.png}
+    \caption{Reset Password Fulfillment Workflow}
+    \label{fig:password-reset-flow}
+\end{figure}
+
+\paragraph{Alternative Business Rule Implementation}
+
+As an additional technical approach, Business Rules were also developed as a
+possible alternative to the Flow Designer implementation. The objective was
+to reproduce the main processing logic of the Reset Password request using
+server-side JavaScript executed directly on the relevant ServiceNow records.
+
+Three Business Rules were created for this purpose:
+
+\begin{itemize}
+    \item \textbf{BR - Password Reset - Set Priority:} determines the priority
+    of the Requested Item according to the urgency selected by the requester.
+    An urgent request is assigned the highest priority, while a non-urgent
+    request receives a lower priority.
+
+    \item \textbf{BR - Password Reset - Create Catalog Task:} automatically
+    creates a Catalog Task for the Service Desk when a Reset Password request
+    is submitted. The task contains information about the requested user and
+    the concerned application.
+
+    \item \textbf{BR - Password Reset - Close RITM:} monitors the completion
+    of the Catalog Task and automatically updates the associated Requested
+    Item to a closed state once the task is completed.
+\end{itemize}
+
+This alternative implementation demonstrates that the same fulfillment logic
+can be achieved through server-side Business Rules in addition to Flow
+Designer. The Business Rules therefore provide a possible code-based
+alternative for implementing the workflow logic, while the Flow Designer
+implementation offers a visual and more easily maintainable representation
+of the process.
+
+\subsection{Service Level Agreement Design}
+
+Service Level Agreements (SLAs) were defined to establish the expected
+fulfillment time for each type of service request. The applicable SLA depends
+on the Catalog Item and, where applicable, the priority assigned to the
+request. This allows requests with different levels of urgency or complexity
+to be associated with appropriate fulfillment targets.
+
+The configured SLA targets for the five Catalog Items are presented in
+Table~\ref{tab:sla-targets}.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{4.2cm}|
+        >{\raggedright\arraybackslash}p{2.5cm}|
+        >{\raggedright\arraybackslash}p{3.2cm}|X|}
+        \hline
+        \textbf{Catalog Item} & \textbf{Priority} &
+        \textbf{SLA Target} & \textbf{SLA Definition} \\
+        \hline
+        Create User Account &
+        Normal &
+        24 hours &
+        Standard user account creation \\
+        \hline
+        Create User Account &
+        High &
+        48 hours &
+        Administrator account creation \\
+        \hline
+        Enterprise VPN Access Request &
+        High &
+        4 to 24 hours &
+        Enterprise VPN access request \\
+        \hline
+        Software Installation &
+        Normal &
+        1 business day &
+        Standard software installation \\
+        \hline
+        Software Installation &
+        Medium &
+        3 business days &
+        Licensed software installation \\
+        \hline
+        IT Equipment Request &
+        Normal &
+        2 business days &
+        Request for in-stock equipment \\
+        \hline
+        IT Equipment Request &
+        Medium &
+        10 business days &
+        Request for out-of-stock equipment \\
+        \hline
+        Reset Password &
+        Low &
+        2 hours &
+        Standard password reset \\
+        \hline
+        Reset Password &
+        Critical &
+        30 minutes &
+        Urgent password reset \\
+        \hline
+    \end{tabularx}
+    \caption{SLA Targets Defined for the Service Catalog Items}
+    \label{tab:sla-targets}
+\end{table}
+
+The SLA definitions establish a relationship between request priority and
+expected fulfillment time. For example, urgent password resets have a
+Critical priority and a 30-minute target, while standard resets have a Low
+priority and a 2-hour target.
+
+These SLA requirements complement the fulfillment workflows and are
+configured in ServiceNow according to the defined conditions.
+
+\section{Conclusion}
+This chapter translated existing request management challenges into functional requirements 
+to design the new Service Request Fulfillment solution. The proposed ServiceNow architecture detailed the Service 
+Catalog, workflows, priority-based SLAs, and five core Catalog Items including a Business Rule approach for 
+Password Resets. The following chapter covers the system's practical implementation and configuration.
+
+\chapter{Implementation of the Service Request Fulfillment Solution}
+
+\section{Introduction}
+This chapter details the practical implementation of the Service Request Fulfillment solution designed in 
+the previous phase, providing a comprehensive overview of the ServiceNow development environment and 
+its core configurations. It explores the technical realization of the Service Catalog, automated workflows, 
+specific Catalog Items, Service Level Agreements (SLAs), and supporting automation scripts. 
+Finally, the chapter outlines the rigorous testing and validation activities conducted to ensure system 
+reliability, culminating in the packaging and preparation of these configurations for seamless 
+deployment across different ServiceNow instances.
+
+\section{ServiceNow Development Environment}
+
+\subsection{Development Instance}
+The implementation was carried out using a Personal Developer Instance (PDI)
+provided by ServiceNow. The PDI, identified as \textbf{dev292675}, was used as
+the development environment for configuring and testing the Service Request
+Fulfillment solution.
+
+The instance was used in the context of ServiceNow System Administrator
+training and provided the environment required to apply the concepts learned
+during the training to the practical project. It was running the
+\textbf{Australia} release and was used to develop and test the Catalog Items,
+workflows, Business Rules, SLAs, and other configuration elements of the
+solution.
+
+The PDI therefore served as the main development and testing environment
+throughout the practical phase of the internship.
 
 
+\subsection{Application and Modules Used}
+The implementation was mainly carried out within the \textbf{IT Service
+Management (ITSM)} environment of ServiceNow. Several applications and
+modules were used throughout the development of the Service Request
+Fulfillment solution.
 
+The main components used were:
 
+\begin{itemize}
+    \item \textbf{Service Catalog and Catalog Builder:} used to create and
+    configure the five Catalog Items, their categories, request forms, and
+    variables.
 
+    \item \textbf{Flow Designer / Process Automation:} used to implement
+    request workflows, including conditions, approvals, fulfillment tasks,
+    and notifications.
 
+    \item \textbf{SLA Definitions:} used to configure service-level targets
+    according to the type and priority of each request.
 
+    \item \textbf{System Definition:} used to configure supporting elements
+    such as Business Rules and other system-level components.
 
+    \item \textbf{User and Group Management:} used to manage the users and
+    groups involved in request submission, approval, and task assignment.
+\end{itemize}
 
+These components were combined to implement the different stages of the
+Service Request Fulfillment process, from request submission and approval to
+fulfillment and closure.
 
+\subsection{Configuration Environment}
 
+The solution was developed and configured directly within the ServiceNow PDI.
+The configuration environment provided access to the main components required
+for the implementation, including the Service Catalog, Flow Designer, Business
+Rules, SLAs, users, and groups.
 
+The development activities were performed progressively, starting with the
+configuration of the Catalog Items and their variables, followed by the
+implementation of the fulfillment workflows and supporting automation. The
+configured components were then tested within the same development
+environment before preparing the solution for deployment.
 
+\section{Service Catalog Implementation}
 
 
 
