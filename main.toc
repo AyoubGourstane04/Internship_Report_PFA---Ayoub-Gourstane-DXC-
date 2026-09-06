@@ -85,8 +85,8 @@
 \contentsline {subsection}{\numberline {4.2.3}Configuration Environment}{64}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}Service Catalog Implementation}{65}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Catalog Creation and Organization}{65}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Catalog Item Creation}{66}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Variable and Request Form Configuration}{67}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.2}Catalog Item Creation}{65}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Variable and Request Form Configuration}{66}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Categories and User Access Configuration}{67}{subsection.4.3.4}%
 \contentsline {section}{\numberline {4.4}Workflow and Process Automation}{70}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Flow Designer Configuration}{70}{subsection.4.4.1}%
