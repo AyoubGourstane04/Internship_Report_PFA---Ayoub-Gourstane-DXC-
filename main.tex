@@ -2034,26 +2034,520 @@ environment before preparing the solution for deployment.
 
 \section{Service Catalog Implementation}
 
+\subsection{Catalog Creation and Organization}
+
+Before creating the Catalog Items, an IT catalog was created through
+\textbf{Maintain Catalogs} in the \textbf{Catalog Definition} module. This
+catalog served as the main container for the services developed as part of
+the project.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.45\textheight,keepaspectratio]{create_it_catalog.png}
+    \caption{Creation of the IT Catalog}
+    \label{fig:create-it-catalog}
+\end{figure}
 
 
+\subsection{Catalog Item Creation}
+
+The Catalog Items were created using \textbf{Catalog Builder} within the
+\textbf{Service Catalog} module. Catalog Builder provided a structured interface
+for creating and configuring the services that would be made available to
+users.
+
+Each Catalog Item was created according to the requirements identified
+during the analysis phase. The five services implemented in the project were:
+
+\begin{itemize}
+    \item \textbf{Create User Account}
+    \item \textbf{Enterprise VPN Access Request}
+    \item \textbf{Software Installation}
+    \item \textbf{IT Equipment Request}
+    \item \textbf{Reset Password}
+\end{itemize}
+
+Figure~\ref{fig:catalog-builder} presents the Catalog Builder interface used
+during the implementation.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.45\textheight,keepaspectratio]{catalog_builder.png}
+    \caption{Catalog Builder}
+    \label{fig:catalog-builder}
+\end{figure}
 
 
+\subsection{Variable and Request Form Configuration}
+
+After creating the Catalog Items, the corresponding request forms were
+configured using \textbf{Catalog Builder}. Variables were added to each form
+to collect the information required for processing the requested service.
+
+The variables were configured according to the requirements defined during
+the analysis phase. Depending on the type of information, different field
+types were used, such as reference fields, choice lists, date fields, and
+text fields. Required information was also configured as mandatory where
+necessary.
+
+The configuration of the variables and request forms allowed the information
+submitted by the requester to be structured and subsequently used by the
+fulfillment workflows.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.45\textheight,keepaspectratio]{catalog_variables.png}
+    \caption{Variable Configuration for a Catalog Item (Create User Account)}
+    \label{fig:catalog-variables}
+\end{figure}
 
 
+\subsection{Categories and User Access Configuration}
+
+The Catalog Items were organized into dedicated categories according to the
+type of service provided. The categories used for the five Catalog Items are
+presented in Table~\ref{tab:items-categories}.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{9cm}|X|}
+        \hline
+        \textbf{Catalog Item} & \textbf{Category} \\
+        \hline
+        Create User Account & User Management \\
+        \hline
+        Enterprise VPN Access Request & Access Management \\
+        \hline
+        Software Installation & Software Services \\
+        \hline
+        IT Equipment Request & Hardware Services \\
+        \hline
+        Reset Password & Self Service \\
+        \hline
+    \end{tabularx}
+    \caption{Catalog Items and Their Categories}
+    \label{tab:items-categories}
+\end{table}
+
+Figure~\ref{fig:catalog-categories} illustrates the configuration of the
+catalog categories within the IT catalog.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.45\textheight,keepaspectratio]{catalog_categories.png}
+    \caption{Configuration of the Catalog Categories}
+    \label{fig:catalog-categories}
+\end{figure}
+
+Access to specific Catalog Items was controlled using \textbf{User Criteria}.
+These criteria determine which users can access and submit a particular
+service request.
+
+For the \textit{Create User Account} Catalog Item, access was configured for
+new employees, managers, the Human Resources (HR) team, and the Identity and
+Access Management (IAM) team. For the \textit{Enterprise VPN Access Request},
+access was restricted to managers.
+
+The User Criteria were associated with the corresponding Catalog Items through
+the access configuration of each item. The selected criteria were added to
+the \textbf{Available For} configuration, allowing ServiceNow to determine
+which users can access the service.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.40\textheight,keepaspectratio]{catalog_item_user_criteria.png}
+    \caption{Associating User Criteria with a Catalog Item (Create User Account)}
+    \label{fig:catalog-item-user-criteria}
+\end{figure}
+
+Figure~\ref{fig:user-criteria} presents the User Criteria records configured
+for the different access requirements.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.16\textheight,keepaspectratio]{user_criteria.png}
+    \caption{Configured User Criteria}
+    \label{fig:user-criteria}
+\end{figure}
+
+A custom scripted User Criteria was also configured for new employees. This
+criterion dynamically evaluates the user's information to determine whether
+the user meets the defined conditions.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.40\textheight,keepaspectratio]{new_employees_criteria.png}
+    \caption{Custom User Criteria for New Employees}
+    \label{fig:new-employees-criteria}
+\end{figure}
+
+This configuration ensures that each Catalog Item is accessible only to the
+users who meet its defined access criteria.
+
+\section{Workflow and Process Automation}
+
+\subsection{Flow Designer Configuration}
+The fulfillment processes of the Catalog Items were implemented using \textbf{Flow Designer}, 
+ServiceNow's process automation tool. Flow Designer was used to automate the different stages 
+of request processing, from the initial submission to approval, fulfillment, and closure.
+
+Each Catalog Item was associated with a dedicated flow designed according to its specific 
+requirements. The flows use triggers, actions, and conditional logic to determine the 
+appropriate processing path for each request.
+
+The general structure of the implemented flows consists of the following stages : 
+
+\begin{itemize}
+
+    \item \textbf{Trigger:} starts the flow when a request is submitted.
+
+    \item \textbf{Get Catalog Variables:} retrieves the variables and values
+    submitted through the Catalog Item form, making the request information
+    available to the subsequent flow actions.
+
+    \item \textbf{Approval:} sends the request to the appropriate approver
+    when approval is required.
+
+    \item \textbf{Conditions:} evaluates request information such as account
+    type, urgency, license availability, or equipment availability.
+
+    \item \textbf{Catalog Tasks:} creates fulfillment tasks and assigns them
+    to the appropriate teams.
+
+    \item \textbf{Notifications:} informs users or teams when an action is
+    required or when the request reaches an important stage.
+
+    \item \textbf{Closure:} completes the request once the required
+    fulfillment activities have been successfully performed.
+
+\end{itemize}
+
+The flows were configured progressively according to the requirements
+identified during the analysis and design phases. Although the overall
+structure is similar between the Catalog Items, the conditions, approvals,
+and fulfillment activities differ according to the requested service.
+
+Figure~\ref{fig:flow-designer-overview} presents an example of a flow
+configured using Flow Designer.
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[height=0.38\textheight,keepaspectratio]{flow_designer_overview_1.png}
+
+    \vspace{0.3cm}
+
+    \includegraphics[height=0.33\textheight,keepaspectratio]{flow_designer_overview_2.png}
+
+    \caption{Flow Designer Configuration}
+    \label{fig:flow-designer-overview}
+\end{figure}
 
 
+\subsection{Conditions and Branching}
+
+Conditional logic was used to adapt the fulfillment process according to the
+information provided in the request. The conditions configured in Flow
+Designer determine which path is followed and which actions are executed.
+
+For example, the processing path may vary according to the account type,
+request urgency, software installation result, license availability, or
+equipment stock availability. These conditions allow the workflow to
+automatically adapt to the characteristics of each request without requiring
+manual intervention for every decision.
+
+Conditional branches were also used to handle specific verification and
+processing steps. In the \textit{Software Installation} process, the user is
+asked to validate whether the requested software has been successfully
+installed and configured. If the validation is successful, the Requested Item
+is updated to \textit{Closed Complete}. If the installation is reported as
+failed, the workflow follows an alternative path and updates the Requested
+Item to \textit{Closed Incomplete}.
+
+Conditions were also used to determine the priority of certain requests. The
+resulting priority can then be used by the applicable SLA definition to
+determine the expected fulfillment target.
+
+Figure~\ref{fig:flow-conditions} illustrates the conditional branching used
+for user validation in the Software Installation workflow.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{flow_conditions.png}
+    \caption{Conditional Branching for Software Installation Validation}
+    \label{fig:flow-conditions}
+\end{figure}
 
 
+\subsection{Approvals and Rejection Handling}
+
+Approval steps were implemented in Flow Designer to ensure that requests
+requiring authorization are reviewed before the fulfillment activities begin.
+The approval process varies according to the type of service requested and
+the responsibilities associated with it.
+
+For the \textit{Create User Account} Catalog Item, the request is submitted
+for approval by the user's manager and then by the Human Resources (HR) team.
+For the \textit{Enterprise VPN Access Request}, the request is first sent to
+the manager and then to the Security team. Other Catalog Items use different
+approval configurations according to their requirements.
+
+The approval actions were configured to wait for the required decision before
+continuing with the subsequent fulfillment steps. When an approval is
+rejected, the workflow follows a dedicated rejection path and updates the
+Requested Item accordingly, preventing the request from continuing through
+the normal fulfillment process.
+
+This approach ensures that requests requiring authorization cannot proceed to
+fulfillment without the required approvals, while rejected requests are
+properly identified and closed.
+
+Figure~\ref{fig:approval-flow} presents an example of the approval process
+configured in Flow Designer.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{approval_flow.png}
+    \caption{Approval Workflow For VPN Access Request}
+    \label{fig:approval-flow}
+\end{figure}
 
 
+\subsection{Catalog Tasks and Assignment}
+
+After the required approval steps and rejection handling, the workflows create
+the necessary \textbf{Catalog Tasks (SCTASKs)} to perform the fulfillment
+activities. Each task represents a specific operational activity required to
+complete the corresponding service request.
+
+For each Catalog Task, an appropriate \textbf{Assignment Group} was
+configured according to the team responsible for performing the activity.
+The relevant Catalog Item variables were also made available to the
+fulfillment team, allowing them to access the information submitted by the
+requester directly from the task and use it during processing.
+
+The Catalog Tasks and their corresponding Assignment Groups are presented in
+Table~\ref{tab:catalog-tasks-assignment}.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|
+        >{\raggedright\arraybackslash}p{4.5cm}|
+        >{\raggedright\arraybackslash}p{5.5cm}|X|}
+        \hline
+        \textbf{Catalog Item} &
+        \textbf{Catalog Task} &
+        \textbf{Assignment Group} \\
+        \hline
+
+        Create User Account &
+        AD Account Creation &
+        IAM Group \\
+        \hline
+
+        Create User Account &
+        Mailbox Creation &
+        Messaging Team \\
+        \hline
+
+        Create User Account &
+        Application Access &
+        Application Support \\
+        \hline
+
+        Enterprise VPN Access Request &
+        Security Analysis &
+        Security Team \\
+        \hline
+
+        Enterprise VPN Access Request &
+        VPN Configuration &
+        Network Team \\
+        \hline
+
+        Enterprise VPN Access Request &
+        User Testing &
+        Service Desk \\
+        \hline
+
+        Software Installation &
+        License Availability Check &
+        Software Asset Management \\
+        \hline
+
+        Software Installation &
+        Software Installation &
+        Desktop Support \\
+        \hline
+
+        IT Equipment Request &
+        Stock Check &
+        IT Asset Management \\
+        \hline
+
+        IT Equipment Request &
+        Equipment Preparation &
+        Desktop Support \\
+        \hline
+
+        IT Equipment Request &
+        Delivery &
+        Logistics \\
+        \hline
+
+        Reset Password &
+        Password Reset &
+        Service Desk \\
+        \hline
+
+    \end{tabularx}
+    \caption{Catalog Tasks and Assignment Groups}
+    \label{tab:catalog-tasks-assignment}
+\end{table}
+
+The creation and assignment of these tasks were integrated directly into the
+corresponding Flow Designer workflows. This ensures that, once the required
+conditions and approvals are satisfied, the appropriate fulfillment team
+receives the task without requiring manual routing.
+
+Figure~\ref{fig:catalog-task-configuration} presents an example of a Catalog
+Task configured in Flow Designer, including its assignment and the request
+information made available to the fulfillment team.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{catalog_task_configuration.png}
+    \caption{Catalog Task Configuration and Assignment}
+    \label{fig:catalog-task-configuration}
+\end{figure}
 
 
+\subsection{Notifications}
 
+Notifications were configured to keep the requester and the relevant users
+informed about important events during the fulfillment process. Three main
+notifications were implemented: one dedicated to the \textit{Software
+Installation} process and two global notifications handling the closure of
+Catalog Items.
 
+The first notification, \textit{Software Installation User Validation}, is
+triggered when the software installation has been completed and the user's
+validation is required. The notification is associated with the approval
+record generated for the validation step and is sent to the corresponding
+approver. The email provides information about the installed software and
+the target machine, and includes actions allowing the user to validate the
+installation or report a problem.
 
+Figure~\ref{fig:software-validation-notification} presents the configuration
+of the notification used to request user validation.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.78\textwidth,keepaspectratio]{software_validation_notification.png}
+    \caption{Software Installation User Validation Notification}
+    \label{fig:software-validation-notification}
+\end{figure}
 
+Figure~\ref{fig:software-validation-notification-preview} presents a preview
+of the email sent to the user for software installation validation.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.62\textwidth,keepaspectratio]{software_validation_notification_preview.png}
+    \caption{Software Installation User Validation Notification Preview}
+    \label{fig:software-validation-notification-preview}
+\end{figure}
+
+Two additional notifications were configured for the closure of Catalog
+Items. The first notification is triggered when a Requested Item reaches the
+\textit{Closed Complete} state. It informs the requester that the service
+request has been successfully processed and closed. The email includes
+information such as the request number, requested service, opening date, and
+closure notes.
+
+Figure~\ref{fig:closed-complete-notification} shows the configuration of the
+notification for successfully completed requests.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.78\textwidth,keepaspectratio]{closed_complete_notification.png}
+    \caption{Closed Complete Notification Configuration}
+    \label{fig:closed-complete-notification}
+\end{figure}
+
+Figure~\ref{fig:closed-complete-notification-preview} presents the email
+preview sent when a request is successfully completed.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.62\textwidth,keepaspectratio]{closed_complete_notification_preview.png}
+    \caption{Closed Complete Notification Preview}
+    \label{fig:closed-complete-notification-preview}
+\end{figure}
+
+The second global notification is triggered when a Requested Item reaches
+the \textit{Closed Incomplete} state. It informs the requester that the
+request could not be successfully completed and provides the available
+request details and rejection or closure information.
+
+Figure~\ref{fig:closed-incomplete-notification} shows the configuration of the
+notification for requests closed as incomplete.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.78\textwidth,keepaspectratio]{closed_incomplete_notification.png}
+    \caption{Closed Incomplete Notification Configuration}
+    \label{fig:closed-incomplete-notification}
+\end{figure}
+
+Figure~\ref{fig:closed-incomplete-notification-preview} presents the email
+preview sent when a request is closed as incomplete.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.62\textwidth,keepaspectratio]{closed_incomplete_notification_preview.png}
+    \caption{Closed Incomplete Notification Preview}
+    \label{fig:closed-incomplete-notification-preview}
+\end{figure}
+
+For requests closed as incomplete, the workflow performs a lookup of the
+corresponding approval record before updating the Requested Item. This allows
+relevant information from the approval record, such as the approver, to be
+retrieved and used during the subsequent processing of the request.
+
+Figure~\ref{fig:notification-lookup} illustrates the lookup operation used in
+the workflow before the request is closed as incomplete.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.28\textheight,keepaspectratio]{notification_lookup_flow_1.png}
+
+    \vspace{0.3cm}
+
+    \includegraphics[height=0.28\textheight,keepaspectratio]{notification_lookup_flow_2.png}
+
+    \caption{Approval Record Lookup Before Closing a Request as Incomplete}
+    \label{fig:notification-lookup}
+\end{figure}
+
+The notification configuration therefore provides communication at the main
+stages requiring user interaction or informing the requester of the final
+outcome of the service request.
+
+\section{Catalog Item Implementation}
+
+\subsection{Create User Account}
+
+\subsection{Enterprise VPN Access Request}
+
+\subsection{Software Installation}
+
+\subsection{IT Equipment Request}
+
+\subsection{Reset Password}
 
 
 \end{document}
